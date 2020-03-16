@@ -37,11 +37,12 @@ namespace SuperheroManager.Models
         // POST: Superheros/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Superhero superhero)
         {
             try
             {
-                // TODO: Add insert logic here
+                _context.Superheros.Add(superhero);
+                _context.SaveChanges();
 
                 return RedirectToAction(nameof(Index));
             }
