@@ -87,7 +87,8 @@ namespace SuperheroManager.Models
         // GET: Superheros/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Superhero superhero = _context.Superheros.First(s => s.Id == id);
+            return View(superhero);
         }
 
         // POST: Superheros/Delete/5
@@ -97,7 +98,9 @@ namespace SuperheroManager.Models
         {
             try
             {
-                // TODO: Add delete logic here
+                Superhero superhero = _context.Superheros.First(s => s.Id == id);
+                _context.Superheros.Remove(superhero);
+                _context.SaveChanges();
 
                 return RedirectToAction(nameof(Index));
             }
