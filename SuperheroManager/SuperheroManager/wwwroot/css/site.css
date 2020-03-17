@@ -13,9 +13,14 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
+  color: #ffffff;
+  background-color: #cc7777;
+  border-radius: 8px;
+  border-width: 2px;
   border-color: #1861ac;
+}
+.btn-primary:hover{
+    background-color: #7799ee;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
