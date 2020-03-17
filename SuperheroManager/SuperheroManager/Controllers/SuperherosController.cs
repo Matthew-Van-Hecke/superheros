@@ -25,7 +25,8 @@ namespace SuperheroManager.Models
         // GET: Superheros/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Superhero superhero = _context.Superheros.FirstOrDefault(s => s.Id == id);
+            return View(superhero);
         }
 
         // GET: Superheros/Create
