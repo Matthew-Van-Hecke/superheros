@@ -14,5 +14,6 @@ namespace SuperheroManager.Models
         public string AlterEgo { get; set; }
         public string PrimarySuperheroAbility { get; set; }
         public string SecondarySuperheroAbility { get; set; }
+        public string Catchphrase { get; set; }
     }
 }

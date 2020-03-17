@@ -55,7 +55,8 @@ namespace SuperheroManager.Models
         // GET: Superheros/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Superhero superhero = _context.Superheros.FirstOrDefault(s => s.Id == id);
+            return View(superhero);
         }
 
         // POST: Superheros/Edit/5
@@ -66,7 +67,7 @@ namespace SuperheroManager.Models
             try
             {
                 // TODO: Add update logic here
-
+                //_context.Superheros.First(s => s.Id == id).
                 return RedirectToAction(nameof(Index));
             }
             catch
