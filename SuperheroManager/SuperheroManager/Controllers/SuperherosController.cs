@@ -67,6 +67,13 @@ namespace SuperheroManager.Models
             try
             {
                 // TODO: Add update logic here
+                Superhero superheroToUpdate = _context.Superheros.First(s => s.Id == id);
+                superheroToUpdate.Name = collection["Name"];
+                superheroToUpdate.AlterEgo = collection["AlterEgo"];
+                superheroToUpdate.PrimarySuperheroAbility = collection["PrimarySuperheroAbility"];
+                superheroToUpdate.SecondarySuperheroAbility = collection["SecondarySuperheroAbility"];
+                superheroToUpdate.Catchphrase = collection["Catchphrase"];
+                _context.SaveChanges();
                 //_context.Superheros.First(s => s.Id == id).
                 return RedirectToAction(nameof(Index));
             }
